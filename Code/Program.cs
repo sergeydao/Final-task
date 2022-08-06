@@ -22,7 +22,7 @@ for (int i = 0; i < array.Length; i++)
     }
 }
 PrintArray(finalArray);
-*/
+
 
 void PrintArray(string[] array)
 {
@@ -33,7 +33,7 @@ void PrintArray(string[] array)
     }
     Console.WriteLine();
 }
-/*
+
 // variation#2
 string[] array = { "hello", "2", "world", ":-)", "**", "00!3" };
 string[] finalArray = new string[6];
@@ -48,7 +48,7 @@ for (int i = 0; i < array.Length; i++)
     }
 }
 PrintArray(finalArray);
-*/
+
 
 string[] array = { "hello", "2", "world", ":-)", "**", "00!0" };
 string[] finalArray = new string[6];
@@ -76,4 +76,58 @@ string[] SortArray(string[] array, string[] finalArray)
         }
     }
     return finalArray;
+}
+*/
+
+Task();
+
+void Task()
+{
+    Console.WriteLine();
+    Console.WriteLine("Задайте размер массива. Введите целое число:");
+    int size = Convert.ToInt32(Console.ReadLine());
+    string[] array = new string[size];
+    string[] finalArray = new string[size];
+    FillArray(array, size);
+    SortArray(array, finalArray);
+    Console.WriteLine();
+    Console.WriteLine("Вывод массива: ");
+    PrintArray(array);
+    Console.WriteLine();
+    Console.WriteLine("Вывод отсортированного массива: ");
+    PrintArray(finalArray);
+    Console.WriteLine();
+}
+
+string[] FillArray(string[] array, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Введите {i + 1}-й элемент массива:");
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
+string[] SortArray(string[] array, string[] finalArray)
+{
+    int index = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            finalArray[index] = array[i];
+            index++;
+        }
+    }
+    return finalArray;
+}
+
+void PrintArray(string[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write(array[i] + "\t");
+    }
+    Console.WriteLine();
 }
