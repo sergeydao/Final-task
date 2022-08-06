@@ -1,5 +1,5 @@
 ﻿// variation#1
-
+/*
 string[] array = { "hello", "2", "world", ":-)", "**", "000" };
 string[] finalArray = new string[6];
 string temporaryArray = String.Empty;
@@ -21,8 +21,7 @@ for (int i = 0; i < array.Length; i++)
         index++;
     }
 }
-
-PrintArray(finalArray);
+*/ 
 
 void PrintArray(string[] array)
 {
@@ -33,3 +32,18 @@ void PrintArray(string[] array)
     }
     Console.WriteLine();
 }
+
+// variation#2
+string[] array = { "hello", "2", "world", ":-)", "**", "00!3" };
+string[] finalArray = new string[6];
+int index = 0;
+
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i].Length <= 3)
+    {
+        finalArray[index] = array[i];
+        index++;
+    }
+}
+PrintArray(finalArray);
