@@ -21,7 +21,8 @@ for (int i = 0; i < array.Length; i++)
         index++;
     }
 }
-*/ 
+PrintArray(finalArray);
+*/
 
 void PrintArray(string[] array)
 {
@@ -32,7 +33,7 @@ void PrintArray(string[] array)
     }
     Console.WriteLine();
 }
-
+/*
 // variation#2
 string[] array = { "hello", "2", "world", ":-)", "**", "00!3" };
 string[] finalArray = new string[6];
@@ -47,3 +48,32 @@ for (int i = 0; i < array.Length; i++)
     }
 }
 PrintArray(finalArray);
+*/
+
+string[] array = { "hello", "2", "world", ":-)", "**", "00!0" };
+string[] finalArray = new string[6];
+SortArray(array, finalArray);
+PrintArray(finalArray);
+
+string[] SortArray(string[] array, string[] finalArray)
+{
+    string arraySecond = String.Empty;
+    int index = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        arraySecond = array[i];
+        int length = arraySecond.Length;
+        int count = 0;
+        while (length > 0)
+        {
+            count++;
+            length--;
+        }
+        if (count <= 3)
+        {
+            finalArray[index] = arraySecond;
+            index++;
+        }
+    }
+    return finalArray;
+}
